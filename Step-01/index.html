@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      input {
+        font-weight: bold;
+        background-color: rgba(0, 0, 255, 0.29);
+        color: white;
+      }
+    </style>
+    <title>Introduction to CSS</title>
+  </head>
+  <body>
+    <h1>
+      CSS refers to Cascading Style Sheets. CSS helps in styling the HTML pages.
+    </h1>
+    <p>Welcome to CSS3 Learning</p>
+    <ul>
+      <li>CSS3 is the latest version of CSS</li>
+      <li>
+        CSS3 adds new features to help developers solve a number of problems
+        without writing complex code.
+      </li>
+    </ul>
+    <h2>How to write CSS style rules?</h2>
+    <p>
+      CSS is a style sheet markup language. CSS styles are written as a property
+      value pair.
+    </p>
+    <h3>Syntax:</h3>
+    <p>property: value</p>
+    <p>Example: color: green;</p>
+    <h3 style="color: #607d8b; text-align: center">
+      In CSS, selectors are used in targeting the HTML elements on our web pages
+      that we want to style. Observe how styling is applied in the below HTML
+      code
+    </h3>
+    <p
+      style="
+        color: blue;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-align: center;
+      ">
+      Let us learn where do we include CSS style rules There are different ways
+      of specifying style rules
+    </p>
+    <ul style="color: green; text-align: center">
+      <li>Inline Styling</li>
+      <li>Internal Styling</li>
+      <li>External Styling</li>
+      <li>Importing Style Sheet</li>
+    </ul>
+    <h2>Inline Styling is at linke 42 and 52</h2>
+    <h2>Internal Styling is as under:</h2>
+    <form id="login_form">
+      <h1>Login</h1>
+      Enter your Username: <input type="text" /><br /><br />
+      Enter your Password: <input type="password" /> <br /><br />
+      <input id="login_button" type="submit" value="Login" />
+      <input id="reset_button" type="submit" value="Reset" />
+    </form>
+
+    <article>
+      <h2>Internal sheets have few disadvantages</h2>
+      <ul>
+        <li>They affect only one web page</li>
+        <li>They can sometimes affect the page load time.</li>
+      </ul>
+    </article>
+    <h2>
+      In order to import CSS files, we need to write the import statement within
+      the style tag. Syntax:
+    </h2>
+    <p>
+      &lt;style type="text/css"&gt; @import url("http://www.xyz.com/style.css")
+      &lt;/style&gt;
+    </p>
+    <h2>It is possible to import a CSS file within another CSS file</h2>
+    <p>
+      If you need to import this style.css file within another CSS file say
+      sample.css file, then you can import as shown below
+    </p>
+    <p>@import url('style.css')</p>
+
+    <article>
+      <h1>What are Selectors ?</h1>
+      <p>
+        CSS selectors can be related to the previously discussed example
+        scenario. Sometimes we might have a requirement to style all the
+        paragraph elements of a web page, we would select all the paragraph
+        elements in order to style them, and this is similar to selecting the
+        mobiles out of all the gadgets. Sometimes we might want to style only a
+        set of paragraphs out of all the paragraphs in a web page and this is
+        similar to selecting a specific brand and model. Sometimes we might want
+        to style only one paragraph, and this is similar to selecting a specific
+        color from different colors available. There are different types of
+        selectors available in CSS
+      </p>
+      <ul>
+        <li>Element Selector</li>
+        <li>Id Selector</li>
+        <li>Class Selector</li>
+        <li>Contextual Selectors</li>
+        <li>Grouping of selectors</li>
+      </ul>
+      <h2>
+        CSS pseudo-class is a keyword that can be applied to selectors.
+        Pseudo-classes specifies the state of the element to be selected
+      </h2>
+      <p>Link related pseudoclasses</p>
+      <p>
+        The link is highlighted when hovered. This is achieved using :hover
+        pseudoclass
+      </p>
+      <p>
+        The visited links appear in purple color. This is achieved using
+        :visited pseudo class
+      </p>
+      <h2>Input related pseudo-classes</h2>
+      <p>
+        The Last Name is an enabled text field, which is applied with light blue
+        background-color using :enabled pseudoclass. The Last Name field is a
+        mandatory field, which is applied with red background-color using
+        :required pseudoclass.
+      </p>
+      <h2>
+        The first letter of the paragraph is rendered in bigger font-size and
+        purple color using the :first-letter pseudo-class
+      </h2>
+    </article>
+  </body>
+</html>

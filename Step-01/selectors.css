@@ -1,0 +1,42 @@
+body {
+    background-color: lightgrey;
+}
+
+.red {
+    color: red;
+}
+
+#pid {
+    background-color: yellow;
+    color: green;
+}
+
+div p {
+    background-color: yellow;
+    color: green;
+}
+
+h1,
+h2,
+h3 {
+    color: maroon;
+}
+a:hover {
+    background-color: black;
+    color: white;
+}
+
+a::visited {
+    color: purple;
+}
+input[type="text"]:enabled {
+    background-color: lightblue;
+}
+
+input[type="text"]:required {
+    background-color: red;
+}
+p::first-letter {
+    color: #8a2be2;
+    font-size: 200%;
+}

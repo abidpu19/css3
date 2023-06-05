@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Selectors</title>
+  </head>
+  <body>
+    <h2>
+      In CSS3 new selectors have been introduced for efficient selection of HTML
+      elements.
+    </h2>
+    <p>These selectors have been categorized into the following.</p>
+    <ul>
+      <li>Relational Selectors</li>
+      <li>Attribute Selectors</li>
+    </ul>
+    <p>
+      Consider a scenario where we want to style only the direct child element
+      of a parent ignoring the nested child elements or if we have a requirement
+      where we want to style the sibling of an element. In these scenarios, we
+      can use relational selectors. Let us explore relational selector
+    </p>
+    <table border="1" style="margin: 10px; background-color: azure">
+      <caption style="font-size: large; font-weight: 800">
+        Relational Selectors
+      </caption>
+      <thead>
+        <tr>
+          <th>Selector</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Child A>B</td>
+          <td>
+            Selects any element B that is a direct child of A(ignores the deeper
+            nested elements)
+          </td>
+          <td>section > p</td>
+        </tr>
+        <tr>
+          <td>Adjacent Sibling A+B</td>
+          <td>
+            Selects the B element that is placed immediately after the A element
+            and shares the same parent. This selects only the immediate sibling.
+          </td>
+          <td>h1 + p</td>
+        </tr>
+        <tr>
+          <td>General Sibling A ~ B</td>
+          <td>
+            Selects all the B elements that are placed after the A element and
+            share the same parent. This selects all the siblings.
+          </td>
+          <td>div ~ p</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Attribute Selectors</h2>
+    <p>
+      If we have a requirement to style an element based on the attribute of the
+      element or based on the value of the attribute of the element
+    </p>
+
+    <table border="1">
+      <caption style="font-size: large; font-weight: 800">
+        Attribute Selector
+      </caption>
+      <thead>
+        <tr>
+          <th>Attribute Selector</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>a [attribute]</td>
+          <td>Selects all A elements with the specified attribute.</td>
+        </tr>
+        <tr>
+          <td>a[attribute=value]</td>
+          <td>Selects all A elements with specified attribute and value.</td>
+        </tr>
+        <tr>
+          <td>a[attribute^=value]</td>
+          <td>
+            Selects all A elements where the value of attribute starts with the
+            specified value
+          </td>
+        </tr>
+        <tr>
+          <td>a[attribute$=value]</td>
+          <td>
+            Selects all A elements where the value of attribute ends with the
+            specified value.
+          </td>
+        </tr>
+        <tr>
+          <td>a[attribute*=value]</td>
+          <td>
+            Selects all A elements where the value of the attribute contains the
+            specified value.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Best Practice</h2>
+    <p>
+      If multiple selectors are used inside CSS, keep it in a separate line. p,
+      h4, h5{ text-align: left /* Appropriate way to apply CSS for multiple
+      selectors */ }
+    </p>
+    <p>
+      Including descendant selectors in the CSS style sheet is a good practice
+      to improve efficiency.
+    </p>
+    <p>
+      Avoid usage of ID selectors as much as possible, since they are of higher
+      specificity, it is difficult to override them at a later point
+    </p>
+  </body>
+</html>
