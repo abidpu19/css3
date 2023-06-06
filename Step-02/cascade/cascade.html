@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* #sid #pid {
+        color: blue;
+      }
+      section.sclass p#pid.pclass {
+        color: green;
+        color: limegreen !important;
+      } */
+      p#pid {
+        color: green;
+      }
+      #sid p {
+        color: red;
+      }
+    </style>
+    <title>Cascade Order</title>
+  </head>
+  <body>
+    <h2>Priority order/ Cascading order</h2>
+    <p>
+      CSS stands for Cascading style sheets, the first-word cascade is important
+      to understand. When there is a conflict between multiple style rules,
+      which rule to apply is decided using cascade and specificity concepts
+    </p>
+    <ul>
+      <li>inline</li>
+      <li>Internal and / or import</li>
+      <li>External</li>
+      <li>Browser default</li>
+    </ul>
+    <h2>Selector &apos; s precedence</h2>
+    <ul>
+      If there are multiple styles specified for the same HTML element the
+      Priority is a below:
+      <li>ID</li>
+      <li>Class</li>
+      <li>Element</li>
+    </ul>
+    <h2>Specificity</h2>
+    <p>
+      When there are multiple styles specified using multiple selectors in a
+      style rule, then the priority is to be decided based on the specificity
+    </p>
+    <ul>
+      <li>A Specificity is a 3-digit number</li>
+      <li>if the specificity of a style rule is 123 then,</li>
+      <li>1 refers to the number of id selectors</li>
+      <li>2 refers to number of class selectors</li>
+      <li>3 refers to number of elements</li>
+    </ul>
+    <p>The style rule with the highest specificity always wins</p>
+    <section class="sclass" id="sid">
+      <p class="pclass" id="pid">Cascading order</p>
+    </section>
+    <h2>!important Keyword</h2>
+    <p>
+      In case if any style property is important, and should not be overwritten
+      by any, other selectors, we can specify the !important keyword against the
+      property.
+    </p>
+
+    <section class="sclass" id="sid">
+      <p class="pclass" id="pid">Cascading order</p>
+    </section>
+    <p>#sid { color: red !important; } p { color: green; }</p>
+    <p>
+      <b>Line 1:</b> The styling is specified using id to the section and has
+      !important. So the color red will be inherited by paragraph
+      <b> Line 2:</b>
+      Targeting the paragraph elements directly will win over the inheritance.
+      Hence this styling statement wins and the text color of the paragraph will
+      be green. Hence paragraph will be rendered in green color
+    </p>
+
+    <section class="sclass" id="sid">
+      <p class="pclass" id="pid">Cascading order</p>
+    </section>
+    <p>
+      Both the above styling statements carry the same weight because both have
+      1 id and 1 tag but since the red color appears latter it wins Hence
+      paragraph will be rendered in red color
+    </p>
+  </body>
+</html>

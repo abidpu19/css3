@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Attribute Selector</title>
+    <style>
+      ul li {
+        list-style: none;
+      }
+      ul li a {
+        padding-left: 20px;
+        background-repeat: no-repeat;
+      }
+      a {
+        font-size: 40px;
+      }
+      .webicon {
+        width: 100px;
+        height: 20px;
+        color: white;
+        text-decoration: none;
+        padding-left: 20px;
+      }
+      .webicon:before {
+        content: "";
+        background: url("global.png");
+        background-size: cover;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: -40px;
+      }
+      .secureweb {
+        width: 100px;
+        height: 20px;
+        color: white;
+        text-decoration: none;
+        padding-left: 20px;
+      }
+      .secureweb:before {
+        content: "";
+        background: url("security.png");
+        background-size: cover;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: -40px;
+      }
+      .sendmail {
+        width: 100px;
+        height: 20px;
+        color: white;
+        text-decoration: none;
+        padding-left: 20px;
+      }
+      .sendmail:before {
+        content: "";
+        background: url("email.png");
+        background-size: cover;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: -40px;
+      }
+      .ftpcon {
+        width: 100px;
+        height: 20px;
+        color: white;
+        text-decoration: none;
+        padding-left: 20px;
+      }
+      .ftpcon:before {
+        content: "";
+        background: url("ftp.png");
+        background-size: cover;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: -40px;
+      }
+    </style>
+
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a href="http://www.google.com">
+          <i class="webicon"></i> Visit a website</a
+        >
+      </li>
+      <br /><br />
+      <li>
+        <a href="https://www.google.com">
+          <i class="secureweb"></i> Visit a secure website</a
+        >
+      </li>
+      <br /><br />
+      <li>
+        <a href="mailto:email@email.com">
+          <i class="sendmail"></i> Send an email</a
+        >
+      </li>
+      <br /><br />
+      <li>
+        <a href="ftp://www.google.com">
+          <i class="ftpcon"></i> Connect to an FTP server</a
+        >
+      </li>
+      <br />
+    </ul>
+  </body>
+</html>
