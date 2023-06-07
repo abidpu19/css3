@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 1.25rem;
+        background-color: #fff2df;
+        margin-left: 30px;
+        margin-right: 3%;
+        height: 100%;
+      }
+      #formt {
+        background-color: #ff7a18;
+        height: 150%;
+        width: 20px;
+        position: absolute;
+      }
+      #content {
+        padding-left: 40px;
+      }
+    </style>
+    <title>Relative CSS Units</title>
+  </head>
+  <body>
+    <div id="formt"></div>
+    <div id="content">
+      <h1>Relative length units</h1>
+      <p>Relative units specified will be relative to another property</p>
+      <table border="1">
+        <caption style="font-weight: 800">
+          Relative Units
+        </caption>
+        <thead>
+          <tr>
+            <th>Unit</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>em</td>
+            <td>Relative to the font-size</td>
+          </tr>
+          <tr>
+            <td>ex</td>
+            <td>Relative to the x-height of the current font</td>
+          </tr>
+          <tr>
+            <td>rem</td>
+            <td>Relative to font-size of the root element</td>
+          </tr>
+          <tr>
+            <td>vw</td>
+            <td>Relative to 1% of the width of the viewport</td>
+          </tr>
+          <tr>
+            <td>vh</td>
+            <td>Relative to 1% of the height of the viewpor</td>
+          </tr>
+          <tr>
+            <td>%</td>
+            <td>Relative to the parent element</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 style="text-decoration: underline">Font Properties</h2>
+      <p>
+        The font property is a shorthand for font-style, font-variant,
+        font-weight, font-stretch, font-size, line-height, and font-family
+      </p>
+      <ul style="padding-left: 5%; line-height: 1.7rem">
+        <li style="font-family: comic sans ms, Arial">
+          font-family: Specifies the font-family. Values can be web-safe fonts.
+          <b>font-family: "comic sans ms", Arial;</b>
+        </li>
+        <li style="font-style: oblique">
+          font-style: Specifies the style of the font. Values can be normal
+          (default), italic, oblique. <b> font-style: italic;</b>
+        </li>
+        <li style="font-variant: small-caps">
+          font-variant: Specifies the variant of the font. Values can be normal
+          (default) and small-caps <b>font-variant: small-caps; </b>
+        </li>
+        <li style="font-size: 20px">
+          font-size: Specifies the size of the font. Values can be x-small,
+          small, medium, large, and can be a specific number with pixels unit.
+          <b>font-size: x-small; font-size: 20px; </b>
+        </li>
+        <li style="font-weight: bold">
+          font-weight: Specifies the weight of the font. Values can be normal,
+          bold, bolder, light, x-large. <b>font-weight: bold; </b>
+        </li>
+        <li style="line-height: 1.7rem">
+          line-height: Specifies the height of the line
+          <b> line-height: 10px; line-height: 1cm; line-height: 0.5; </b>
+        </li>
+        <li>
+          When line-height is specified without unit, then the number will be
+          multiplied with font-size.
+        </li>
+      </ul>
+      <h2 style="text-decoration: underline">Custom Fonts</h2>
+      <p>We can specify a custom font using the @font-face rule</p>
+      <p>
+        Web fonts allow developers/designers to include fonts that are not
+        installed on the user's computer.
+      </p>
+      <p>
+        The @font-face rule helps in loading custom fonts on a webpage. It
+        instructs the browser to download the custom font specified in the style
+        sheet from where it is hosted and display it.
+      </p>
+      <p>
+        We can create a custom font file using online tools or download the
+        available fonts from the internet, and store it on the server. Whenever
+        needed the font file will be downloaded.
+      </p>
+      <p>
+        Assign a name to our custom font and specify the source of our font file
+      </p>
+      <p>
+        <b>
+          Syntax: @font-face { font-family: name; src:
+          url(“pathofthecustomfontfile.”); }
+        </b>
+      </p>
+    </div>
+  </body>
+</html>
