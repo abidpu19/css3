@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-size: 1.25rem;
+
+        line-height: 25px;
+        background: #ffefba; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #ffffff,
+          #ffefba
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #ffffff,
+          #ffefba
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+    </style>
+    <title>Text Properites</title>
+  </head>
+  <body>
+    <h2>
+      We may want to present our text in a more appealing way like spacing,
+      capitalizing, indenting and underlining, etc CSS provides the following
+      text properties
+    </h2>
+    <ul>
+      <li style="text-align: right">
+        text-align: Specifies the horizontal alignment of the text
+        <b>text-align: right;</b>
+      </li>
+      <li style="text-decoration: underline">
+        text-decoration: Specifies whether the text should be underlined or
+        overlined. Values can be none (default), underline, overline,
+        line-through <b>text-decoration: underline;</b>
+      </li>
+      <li style="text-transform: capitalize">
+        text-transform: Specifies whether the text should be rendered in
+        uppercase, lowercase, or camelcase. Values can be capitalized,
+        uppercase, lowercase. <b>text-transform: capitalize;</b>
+      </li>
+      <li style="letter-spacing: 4px">
+        letter-spacing: Specifies the spacing between the letters
+        <b>letter-spacing: 90px;</b>
+      </li>
+      <li style="word-spacing: 4px">
+        word-spacing: Specifies the spacing between the words
+        <b>word-spacing: 90px;</b>
+      </li>
+      <li style="text-indent: 10px">
+        text-indent: Specifies the indentation of the text. Values can be left,
+        right, center and justify
+        <b>text-indent: 90px;</b>
+      </li>
+    </ul>
+    <h2>Text Shadows</h2>
+    <p style="text-shadow: 4px 3px 2px rgb(231, 95, 95)">
+      The text-shadow property adds a shadow to the text of any HTML element
+      <b>text-shadow: 10px 6px 2px black;</b>
+    </p>
+    <p>
+      The first value specifies the horizontal offset. Positive value creates a
+      shadow to the right. Negative value creates the shadow to the left.
+    </p>
+    <p>
+      The second value specifies the vertical offset. Positive value creates a
+      shadow to the left. Negative value creates the shadow to the right.
+    </p>
+    <p>
+      The third value specifies the blur distance. An optional value that
+      decides the percentage of blur effect and takes a positive value.
+    </p>
+    <p>The fourth value specifies the shadow color.</p>
+  </body>
+</html>
