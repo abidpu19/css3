@@ -5,6 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Box Model</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 23px;
+        font-size: 1.25rem;
+      }
+      div {
+        border-left: 4px solid rgb(0, 2, 92);
+        background-color: #ffc0cb;
+      }
+      div > p {
+        padding-left: 20px;
+      }
+    </style>
   </head>
   <body>
     <h2>Why Box Model</h2>
@@ -36,6 +54,36 @@
       The padding, margin, and border are the CSS properties, which helps in
       providing proper spacing to the HTML element so that the webpage is
       readable by the end-users
+    </p>
+    <h2>Boder</h2>
+    <h3>Box model</h3>
+    <div>
+      <p>This text is the content of the box.</p>
+      <p>This text is the content of the box.</p>
+      <p>This text is the content of the box.</p>
+    </div>
+    <p>
+      The first argument 2px specifies the width of the border. The second value
+      solid specifies the border-style and the third argument specifies the
+      color of the border The order of the values specified to the border
+      property can be changed. The second argument border-style can take
+      different values. We can provide solid, dotted, dashed, etc as values. The
+      border-style property can be specified as border-style-left,
+      border-style-right, border-style-top, border-style-bottom
+    </p>
+    <h2>Border Radius</h2>
+    <p>Border property adds a sharp border to our HTML element.</p>
+    <p>
+      If we need rounded corners for our border, we can achieve the requirement
+      using the border-radius property of CSS3. The border-radius is a shorthand
+      property. Border radius value can be expressed using px or %.
+      Percentage(%) is used when we want border-radius to be directly correlated
+      with elements width. border-radius is a combination of below four
+      properties. border-top-left: can be used to provide top left radius
+      border-top-right: can be used to provide top right radius
+      border-bottom-left: can be used to provide bottom left radius
+      border-bottom-right: can be used to provide bottom right radius border:
+      lightgrey dashed 3px;
     </p>
   </body>
 </html>
