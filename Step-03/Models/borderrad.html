@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 20px;
+        margin: 40px;
+        line-height: 1.7rem;
+        font-size: 1.25rem;
+      }
+      ul > li {
+        margin-bottom: 10px;
+        padding: 20px;
+        color: #fff;
+      }
+      #top-left {
+        background-color: rgb(11, 65, 47);
+        border-top-left-radius: 20px;
+        border-left: 20px solid #e90f7c;
+      }
+      #top-right {
+        background-color: crimson;
+        border-top-right-radius: 30px;
+        border-right: #08e9a5 solid 20px;
+      }
+      #btm-left {
+        background-color: chocolate;
+        border-bottom-left-radius: 30px;
+        border-left: solid 20px green;
+      }
+      #btm-right {
+        background-color: #921818;
+        border-bottom-right-radius: 30px;
+        border-right: solid 20px green;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid hotpink;
+        background-color: RGBA(255, 192, 203, 0.45);
+        border-radius: 30px 15px 25px 50px;
+      }
+    </style>
+    <title>Border Radius</title>
+  </head>
+  <body>
+    <h2>Border property adds a sharp border to our HTML element.</h2>
+    <p>
+      If we need rounded corners for our border, we can achieve the requirement
+      using the border-radius property of CSS3. We can use slashes(“/”) between
+      2 values to specify elliptical corners. Ex : border-radius: 10px/20px; /*
+      horizontal radius/vertical radius */ Border radius is short-hand property.
+      Border radius value can be expressed using px or %. Percentage(%) is used
+      when we want border-radius to be directly correlated with elements width.
+      border-radius is combinations of the below four properties.
+    </p>
+    <ul>
+      <li id="top-left">
+        border-top-left: can be used to provide top left radius
+      </li>
+      <li id="top-right">
+        border-top-right: can be used to provide top right radius
+      </li>
+      <li id="btm-right">
+        border-bottom-right: can be used to provide bottom right radius
+      </li>
+      <li id="btm-left">
+        border-bottom-left: can be used to provide bottom left radius
+      </li>
+    </ul>
+    <br />
+
+    <p>In border-radius CSS property:</p>
+    <ul>
+      <li
+        style="
+          color: rgb(160, 31, 31) !important;
+          padding: 2px;
+          margin: 0px;
+          background-color: rgb(216, 200, 194);
+        ">
+        if only one value is set, this radius applies to all 4 corners.
+      </li>
+      <li
+        style="
+          color: rgb(160, 31, 31) !important;
+          padding: 2px !important;
+          margin: 0px !important;
+          background-color: rgb(216, 200, 194);
+        ">
+        If two values are set, the first value applies to top-left and
+        bottom-right corner, the second value applies to top-right and
+        bottom-left corner.
+      </li>
+      <li
+        style="
+          color: rgb(160, 31, 31) !important;
+          padding: 2px !important;
+          margin: 0px !important;
+          background-color: rgb(216, 200, 194);
+        ">
+        If all values are set, they apply to the top-left, top-right,
+        bottom-right, bottom-left corner in that particular order.
+      </li>
+    </ul>
+    <p>
+      <b>Note:</b> Perfect Border can be applied to HTML Element using
+      border-radius property.
+    </p>
+    <div></div>
+  </body>
+</html>

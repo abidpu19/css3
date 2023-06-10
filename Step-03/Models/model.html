@@ -16,16 +16,41 @@
         font-size: 1.25rem;
       }
       div {
-        border-left: 4px solid rgb(0, 2, 92);
+        border-left: 19px solid rgb(0, 2, 92);
         background-color: #ffc0cb;
+        width: 600px;
+        /* border: lightgrey dashed 3px; */
+        border-radius: 50px 10px 10px 50px;
+        border-right: 19px solid rgb(0, 2, 92);
       }
       div > p {
         padding-left: 20px;
+        line-height: 1.5rem;
+        margin: 2px;
+      }
+      a:not([class]) {
+        /* Relatively sized thickness and offset */
+        text-decoration-thickness: max(0.08em, 1px);
+        text-underline-offset: 0.15em;
+      }
+      a:focus-visible {
+        --outline-size: max(2px, 0.15em);
+
+        outline: var(--outline-width, var(--outline-size))
+          var(--outline-style, solid) var(--outline-color, currentColor);
+        outline-offset: var(--outline-offset, var(--outline-size));
+      }
+      a:target {
+        scroll-padding-block-start: 2rem;
+      }
+      a:focus {
+        scroll-padding-block-end: 8vh;
       }
     </style>
   </head>
   <body>
     <h2>Why Box Model</h2>
+    <a href="#">This is testing</a>
     <p>
       We can see that there is some spacing from the photo to the frame and
       spacing between the multiple photo frames on the wall. CSS box model can
@@ -71,9 +96,9 @@
       border-style property can be specified as border-style-left,
       border-style-right, border-style-top, border-style-bottom
     </p>
-    <h2>Border Radius</h2>
+    <h2 id="modedown">Border Radius</h2>
     <p>Border property adds a sharp border to our HTML element.</p>
-    <p>
+    <p id="last">
       If we need rounded corners for our border, we can achieve the requirement
       using the border-radius property of CSS3. The border-radius is a shorthand
       property. Border radius value can be expressed using px or %.
@@ -84,6 +109,31 @@
       border-bottom-left: can be used to provide bottom left radius
       border-bottom-right: can be used to provide bottom right radius border:
       lightgrey dashed 3px;
+    </p>
+    <h2>Margin</h2>
+    <p>
+      Margin is also a shorthand property like padding. We can provide
+      margin-top, margin-right, margin-bottom,margin-left values
+    </p>
+    <h2>Total Width and Height of an HTML element</h2>
+    <p>
+      When we specify the width and height property for any HTML element using
+      CSS, we are actually setting the width and height of the content not the
+      width and height of the complete element. The complete width and height of
+      an element include the padding, border Total element width = width + left
+      padding + right padding + left border + right border Total element height
+      = height + top padding + bottom padding + top border + bottom border
+    </p>
+    <h2>Display Property</h2>
+    <p>
+      The display property specifies how the element should be rendered. The
+      most common values provided to the display property are inline, block,
+      inline-block, flex, and grid inline: The HTML element applied with this
+      property will be rendered inline. We cannot apply height and width
+      properties. block: The HTML element applied with this property will be
+      rendered as a block element in the next line inline-block: The HTML
+      element will behave like an inline element but we can apply width and
+      height properties
     </p>
   </body>
 </html>

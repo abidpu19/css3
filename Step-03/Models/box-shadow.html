@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Shadow</title>
+    <link rel="stylesheet" href="table.css" />
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 20px;
+        line-height: 1.7rem;
+        font-size: 1.25rem;
+      }
+      ul {
+        margin-left: 20px;
+      }
+      table {
+        align-items: center;
+        box-shadow: -5px 6px 8px -3px rgba(30, 50, 40, 0.5);
+      }
+      table > tbody > tr > td {
+        padding: 5px;
+      }
+      table > thead > tr > th {
+        background-color: darkcyan;
+        color: #fff;
+      }
+      table > tbody > tr:nth-child(even) {
+        background-color: rgb(201, 201, 71);
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      CSS3 allows us to add shadow to any element in the web page using the
+      box-shadow property.
+    </p>
+    <pre>
+        box-shadow:5px 10px 6px 2px rgba(30,50,40,0.5);
+      </pre
+    >
+    <p style="font-weight: 800">In the above example :</p>
+    <ul>
+      <li>5px indicates horizontal offset</li>
+      <li>10px indicates Vertical offset</li>
+      <li>6px indicates Blur Distance</li>
+      <li>2px indicates Spread Distance</li>
+      <li>rgba(30,50,40,0.5) is used to apply shadow color</li>
+    </ul>
+    <h3>
+      Let us have a glance over these properties and understand how to write
+      with them.
+    </h3>
+
+    <table>
+      <caption style="font-weight: 800; text-decoration: underline">
+        Box Shadow properties
+      </caption>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>horizontal offset</td>
+          <td>
+            Positive value creates a shadow to the right. Negative value creates
+            the shadow to the left
+          </td>
+        </tr>
+        <tr>
+          <td>vertical offset</td>
+          <td>
+            Positive value creates a shadow to the bottom Negative value creates
+            the shadow to the top.
+          </td>
+        </tr>
+        <tr>
+          <td>spread distance</td>
+          <td>
+            Optional value. Positive value expands the shadow in all directions.
+            Negative value contracts the shadow.
+          </td>
+        </tr>
+        <tr>
+          <td>blur distance</td>
+          <td>
+            An optional value that decides the percentage of blur effect takes
+            only a positive value.
+          </td>
+        </tr>
+        <tr>
+          <td>color</td>
+          <td>An optional value that specifies the shadow color.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
