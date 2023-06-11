@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Image</title>
+    <style>
+      body {
+        margin: 12px;
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+        color: #202020;
+      }
+      table {
+        border: floralwhite;
+      }
+      th,
+      td {
+        border-top: 1px solid #ecf0f1;
+        padding: 10px;
+      }
+      td {
+        border-left: 1px solid #ecf0f1;
+        border-right: 1px solid #ecf0f1;
+      }
+
+      th {
+        background-color: #4ecdc4;
+      }
+
+      table tr:nth-of-type(even) td {
+        background-color: #d9f4f2;
+      }
+      img {
+        margin-left: 150px;
+        margin-top: 50px;
+        border: 50px solid transparent;
+        border-image: url(frame1.jpg) 13% 17% 14% 15%;
+      }
+      #myDIV {
+        border: 15px solid transparent;
+        border-image: url(border.png);
+        border-image-slice: 30;
+        border-image-repeat: round;
+        border-image-outset: 10px;
+        height: 50px;
+        padding: 15px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h5>
+      Border image is used to specify an image as a border around the HTML
+      element. Border image is a short-hand property to set border-source,
+      border-image-slice, border-width, border-outset, border repeat.
+    </h5>
+    <table>
+      <caption>
+        Border Image Properties
+      </caption>
+      <thead>
+        <tr>
+          <th>border-image</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>border-source</td>
+          <td>Path of the image to be used for the border.</td>
+        </tr>
+        <tr>
+          <td>border-image-slice</td>
+          <td>
+            Specifies the values to slice the image. Can have 1 to 4(top, right,
+            bottom, left) values expressed as pixels or %
+          </td>
+        </tr>
+        <tr>
+          <td>border-width</td>
+          <td>Specifies the width of the border-image.</td>
+        </tr>
+        <tr>
+          <td>border-outset</td>
+          <td>
+            Specifies the amount by which border image area extends beyond
+            border-box.
+          </td>
+        </tr>
+        <tr>
+          <td>border-repeat</td>
+          <td>
+            Specifies whether the edges of the image should be stretched,
+            repeated, rounded or scaled.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Border Image slice property specifies how to slice the image.</h3>
+    <p>
+      The image to be added as a border will be divided into 9 sections based on
+      the image slice value of the border-image property. Once the image is
+      divided into 9 sections. The corners of the image would be placed at the
+      corners of the element and the edges of the image would be placed at the
+      edges of the element. The edges of the image are repeated or scaled based
+      on the border-repeat value.
+    </p>
+    <h3>
+      The border-repeat property specifies whether to stretch, repeat, round or
+      scale the edges of the image.
+    </h3>
+
+    <table>
+      <caption>
+        border-repeat property
+      </caption>
+      <thead>
+        <tr>
+          <th>border-repeat</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>stretch</td>
+          <td>
+            Default value. The image is stretched to fill the area between the
+            edges of the border.
+          </td>
+        </tr>
+        <tr>
+          <td>repeat</td>
+          <td>
+            The image is tiled, or repeated until it fills the area between the
+            edges of the border.
+          </td>
+        </tr>
+        <tr>
+          <td>space</td>
+          <td>
+            The image is tiled, or repeated to fill the area between the edges
+            of the border. If the area cannot be filled with a whole number of
+            tiles, the extra space is distributed around the tiles.
+          </td>
+        </tr>
+        <tr>
+          <td>round</td>
+          <td>
+            The image is tiled, or repeated to fill the area between the edges
+            of the border. If it cannot be filled with a whole number of tiles,
+            the image is re-scaled.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <img src="monalisa01.jpg" alt="Image cannot be loaded" />
+
+    <div id="myDIV">This div is applied with border image</div>
+  </body>
+</html>

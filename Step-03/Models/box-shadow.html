@@ -22,6 +22,7 @@
       table {
         align-items: center;
         box-shadow: -5px 6px 8px -3px rgba(30, 50, 40, 0.5);
+        margin-bottom: 40px;
       }
       table > tbody > tr > td {
         padding: 5px;
@@ -32,6 +33,37 @@
       }
       table > tbody > tr:nth-child(even) {
         background-color: rgb(201, 201, 71);
+      }
+      .myComponent {
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .title {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-size: 16px;
+        color: #777;
+      }
+
+      .btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
       }
     </style>
   </head>
@@ -102,5 +134,10 @@
         </tr>
       </tbody>
     </table>
+    <div class="my-component">
+      <h1 class="title">Hello, World!</h1>
+      <p class="description">This is a styled React component.</p>
+      <button class="btn">Click Me</button>
+    </div>
   </body>
 </html>
