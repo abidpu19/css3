@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scale in CSS3</title>
+    <style>
+      img {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      img#scale {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        margin-top: 70px;
+        transform: scale(1.5, 1.5);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      CSS3 scale() function is used to change(increase/decrease) the size of any
+      element
+    </h1>
+    <p>
+      <b>Syntax:</b> scale(x,y) -> scales the element width(x-value) & height(y
+      value) If only one value is supplied to the scale(value) function, then
+      that value will be considered as both x & y parameters
+    </p>
+    <b>Example</b>
+    <ul>
+      <li>
+        scale(2,1) -> The width of the element will be doubled and height
+        remains the same.
+      </li>
+      <li>scale(0.5) -> will decrease the element size by half</li>
+      <li>scale(1)-> element size will remain same</li>
+      <li>scale(2)-> doubles the element size</li>
+    </ul>
+    <img src="Toy.jpg" alt="Toy" />
+    <img id="scale" src="Toy.jpg" alt="ToyTranslate" />
+  </body>
+</html>

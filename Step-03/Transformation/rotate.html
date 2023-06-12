@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotate CSS3 Property</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 40px;
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+      }
+      img {
+        height: 200px;
+        width: 200px;
+        border: 1px solid black;
+      }
+      img#rotate {
+        height: 200px;
+        width: 200px;
+        border: 1px solid black;
+        margin-top: 70px;
+        transform: rotate(10deg);
+      }
+      table {
+        margin: 20px;
+        border: #ccc 1px solid;
+      }
+      table th,
+      table td {
+        border-top: 1px solid #fafafa;
+        border-bottom: 1px solid #e0e0e0;
+        border-left: 1px solid #e0e0e0;
+        border-right: 1px solid #e0e0e0;
+        width: 200px;
+      }
+      table > tbody > tr:hover {
+        transform: rotate(5deg);
+        background-color: #adf5fa;
+      }
+      th {
+        background-color: rgb(37, 107, 107);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      CSS3 rotate() function is used to rotate an element from its origin point
+      up to a specified angle. The angle is specified in degrees.
+    </h3>
+    <p><b>Syntax:</b> rotate(x) -> Rotates the element.</p>
+    <p>
+      If the angle specified is a positive value then the element rotates
+      clockwise. if the angle specified is a negative value then the element
+      rotates anti-clockwise.
+    </p>
+    <b>Example</b>
+    <ol style="margin-left: 20px">
+      <li style="transform: rotate(3deg)">
+        rotate(20deg) -> Rotates the element by 20 degrees in clockwise
+        direction.
+      </li>
+      <li style="transform: rotateY(23deg)">
+        rotate(-50deg) -> Rotates the element by 50 degrees in anti-clockwise
+        direction
+      </li>
+    </ol>
+    <img src="Toy.jpg" alt="Toy" />
+    <img id="rotate" src="Toy.jpg" alt="ToyRotate" />
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>Pen</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>Book</td>
+        <td>200</td>
+      </tr>
+      <tr>
+        <td>Shirt</td>
+        <td>1000</td>
+      </tr>
+      <tr>
+        <td>Paint</td>
+        <td>2000</td>
+      </tr>
+    </table>
+  </body>
+</html>
