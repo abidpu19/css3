@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Clothing webpage</title>
+    <style>
+      .clothing {
+        float: left;
+        width: 350px;
+        height: 500px;
+        margin: 70px auto;
+        margin-left: 200px;
+        padding: 40px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 8px 8px 8px -5px rgba(0, 0, 0, 0.3);
+      }
+      .cart {
+        float: left;
+        width: 350px;
+        height: 500px;
+        margin: 70px auto 200px;
+        margin-left: 200px;
+        padding: 40px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 8px 8px 8px -5px rgba(0, 0, 0, 0.3);
+      }
+      .button {
+        border-radius: 5px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="mycanvas" height="70" width="1300"> </canvas>
+    <div class="out1"></div>
+    <h2>Clothing Section</h2>
+    <div>
+      <div class="clothing">
+        <h3>List of available Clothing</h3>
+        <br /><br />
+        <img
+          class="img1"
+          src="pant.jpg"
+          alt="Image Not Found" /><br /><br /><br />
+        <img class="img2" src="whiteshirt.jpg" alt="Image Not Found" />
+      </div>
+    </div>
+    <div class="cart">
+      <h3>Shopping Cart</h3>
+      <div>
+        <div id="view1canvas"></div>
+        <div>
+          <input type="button" class="button" value="Buy Items" />
+        </div>
+      </div>
+    </div>
+    <script src="transfer.js"></script>
+  </body>
+</html>

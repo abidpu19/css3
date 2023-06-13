@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform Skew</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        margin: 60px;
+      }
+      ol {
+        margin-left: 20px;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #440000;
+      }
+      img#skew {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #440000;
+        margin-top: 70px;
+        transform: skew(20deg, -25deg);
+      }
+      table {
+        margin: 20px;
+        border: #ccc 1px solid;
+      }
+      table th,
+      table td {
+        border-top: 1px solid #fafafa;
+        border-bottom: 1px solid #e0e0e0;
+        border-left: 1px solid #e0e0e0;
+        border-right: 1px solid #e0e0e0;
+        width: 200px;
+      }
+      /* table > tbody > tr:hover {
+        transform: rotate(5deg);
+        background-color: #adf5fa;
+      } */
+      th {
+        background-color: rgb(37, 107, 107);
+        color: #fff;
+      }
+      table tr:hover {
+        transform: skew(7deg, 7deg);
+        background-color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>CSS3 skew() function is used to turn/skew any element to any angle.</h3>
+    <p>
+      The turning/skewing is dependent on the parameters specified for the
+      vertical & horizontal axis.
+    </p>
+    <p>
+      <b> Syntax:</b> skew(x,y) -> skews the element from x degrees from the
+      x-axis & y- degrees from the y-axis. if the y-axis value is not specified
+      then it has a zero value. To skew an element across a single axis, we can
+      use skewX() and skewY() functions.
+    </p>
+    <h4>Example</h4>
+    <ol>
+      <li style="transform: skew(20deg)">
+        skew(20deg) -> skew an element by 20 degrees across x-axis.
+      </li>
+      <li style="transform: skew(30deg, 10deg)">
+        skew(30deg, 10deg) -> skews an element by 30 degrees across x-axis and
+        10 degrees across y-axis.
+      </li>
+      <li style="transform: skewX(15deg)">
+        skewX(15deg) -> skews an element by 15 degrees across x-axis.
+      </li>
+      <li style="transform: skewY(45deg)">
+        skewY(45deg) -> skews an element by 45 degrees across y-axis.
+      </li>
+    </ol>
+    <br />
+    <img src="Toy.jpg" alt="Toy" />
+    <img id="skew" src="Toy.jpg" alt="ToySkew" />
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>Pen</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>Book</td>
+        <td>200</td>
+      </tr>
+      <tr>
+        <td>Shirt</td>
+        <td>1000</td>
+      </tr>
+      <tr>
+        <td>Paint</td>
+        <td>2000</td>
+      </tr>
+    </table>
+    <!-- <picture>
+      <source
+        media="(-webkit-min-device-pixel-ratio: 1.5)"
+        srcset="2x-800.jpg 800w, 2x-1200.jpg 1200w, 2x-1598.jpg 1598w"
+        sizes=" (min-width: 1066px) 743px, (min-width: 800px) calc(75vw-57px), 100vw" />
+      <img src="Toy.jpg" alt="Toys image" />
+    </picture> -->
+  </body>
+</html>
