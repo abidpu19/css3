@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Step Transition Function</title>
+    <style>
+      div {
+        transition: 2s steps(4);
+      }
+      div:hover {
+        margin-left: 400px;
+        transform: rotate(360deg);
+        box-shadow: -5px -5px 5px #888;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        margin-left: 50px;
+        margin-top: 50px;
+        transition: 3s linear;
+      }
+      img:hover {
+        width: 200px;
+        height: 200px;
+        margin-left: 400px;
+        transform: rotate(360deg);
+        box-shadow: -5px -5px 5px #888;
+      }
+
+      /* copied from https://ishadeed.com/article/comment-component/ */
+      li[data-nested="true"],
+      li[data-nested="true"] li {
+        padding-left: 3rem;
+        line-height: 1.7rem;
+      }
+      @container style(--nested: true) {
+        /* Add spacing to the 2nd level <li> items. */
+        li {
+          padding-left: 3rem;
+          line-height: 1.7rem;
+          font-size: 1.25rem;
+        }
+      }
+      @container style(--nested: true) {
+        li.main {
+          display: grid;
+          grid-template-columns: 3rem 3rem 1fr;
+
+          .comment {
+            grid-column: 1 / -1;
+          }
+        }
+      }
+      li.main {
+        display: grid;
+        grid-template-columns: 3rem 3rem 1fr;
+      }
+      @container style(--nested: true) {
+        ul[depth="1"] {
+          grid-column: 2 / 4;
+          display: grid;
+          grid-template-columns: subgrid;
+
+          > li {
+            grid-column: 1 / 3;
+            display: grid;
+            grid-template-columns: subgrid;
+          }
+        }
+      }
+      @container style(--nested: true) {
+        ul[depth="2"] {
+          grid-column: 2 / 3;
+        }
+      }
+      li:before {
+        content: "";
+        width: 30px;
+        height: 70px;
+        border-left: 2px solid #ef5da8;
+        border-bottom: 2px solid #ef5da8;
+        border-bottom-left-radius: 15px;
+      }
+      @container style(--depth: 0) or style(--depth: 1) {
+        li:has(ul) > .comment {
+          position: relative;
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: calc(var(--size) / 2);
+            top: 2rem;
+            bottom: 0;
+            width: 2px;
+            background: #222;
+          }
+        }
+      }
+      @container style(--depth: 1) {
+        li:not(:last-child) {
+          position: relative;
+
+          &:before {
+            /* Line */
+          }
+        }
+
+        li {
+          position: relative;
+
+          &:after {
+            /* Curved element */
+          }
+        }
+      }
+      @container style(--depth: 2) {
+        li {
+          position: relative;
+
+          &:after {
+            content: "";
+            position: absolute;
+            inset-inline-start: 15px;
+            top: -2px;
+            height: 20px;
+            width: 28px;
+            border-inline-start: 2px solid #000;
+            border-bottom: 2px solid #000;
+            border-end-start-radius: 10px;
+          }
+        }
+
+        li:not(:last-child) {
+          &:before {
+            /* Line */
+          }
+        }
+      }
+      @container style(--lines: true) {
+        @container style(--depth: 0) {
+        }
+
+        @container style(--depth: 1) {
+        }
+
+        @container style(--depth: 1) {
+        }
+
+        @container style(--depth: 2) {
+        }
+      }
+      .comment {
+        --size: 2rem;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .avatar {
+        flex: 0 0 var(--size);
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+      }
+      .user {
+        flex: 0 0 var(--size);
+        width: var(--size);
+        height: var(--size);
+      }
+
+      .comment {
+        --size: 2rem;
+
+        @container style(--depth: 1) or style(--depth: 2) {
+          --size: 1.5rem;
+        }
+      }
+      .comment:has(.emjois-wrapper) {
+        background: var(--default);
+        padding: var(--reset);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      steps() timing function enables us to break the transition into steps.
+    </h2>
+    <p>
+      For example: If I want to transit a square that moves 400px to right on
+      hover in 4 seconds then the square would move 100 pixels to right for
+      every second.
+    </p>
+    <ul style="--depth: 0">
+      <li data-nested="true" style="--nested: true">
+        This function accepts 2 arguments.
+      </li>
+      <ul style="--nested: true">
+        <li>steps(int, start|end)</li>
+        <li>
+          The first parameter specifies the number of intervals to which the
+          transition should be broken. This should be a positive number greater
+          than 0.
+        </li>
+        <li>
+          If the second parameter value is 'start' then the transition will
+          happen at the beginning of each step.
+        </li>
+        <li>
+          If the second parameter value is 'end' then the transition will happen
+          at the end of each step.
+        </li>
+        <ul>
+          <li>There are 2 pre-defined variants of the steps function</li>
+          <li>step-start which is equivalent to steps(1, start)</li>
+          <li>step-end which is equivalent to steps(1, end)</li>
+        </ul>
+      </ul>
+      <li></li>
+    </ul>
+    <div style="background-color: #ef5da8; width: 20px; height: 20px"></div>
+    <img src="Toy.jpg" alt="ToyImage" />
+  </body>
+</html>

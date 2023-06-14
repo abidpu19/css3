@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 20px;
+        font-size: 1.25rem;
+        background-color: rgb(222, 226, 222);
+        line-height: 1.7rem;
+      }
+      ul > li {
+        margin-left: 40px;
+      }
+      table {
+        box-shadow: 8px 8px 8px 5px rgba(0, 0, 0, 0.3);
+        margin-bottom: 10px;
+      }
+      th {
+        background-color: rgb(37, 107, 107);
+        color: #fff;
+      }
+      table > tbody > tr:nth-child(even) {
+        background-color: rgb(233, 248, 246);
+      }
+      table > tbody > tr:hover {
+        background-color: rgb(187, 222, 222);
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+        /* transition: background-color, 0.2s ease-in-out; */
+        /* background-color: #aaa; */
+      }
+      li[data-nested="true"],
+      li[data-nested="true"] li {
+        padding-left: 3rem;
+      }
+      @container style(--nested: true) {
+        /* Add spacing to the 2nd level <li> items. */
+        li {
+          padding-left: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Why Transitions Needed</h1>
+    <p>
+      If we have a requirement to show the gradual changes in the CSS properties
+      of an element during an interval of time.
+    </p>
+    <p>
+      For example, you might want to show an element changing its size in an
+      interval of 2 seconds upon hover of the mouse. We can use the CSS3
+      transition property.
+    </p>
+    <p>
+      Transitions are used for moving the element from one state to another
+      state by transiting the CSS properties of an element over a period of time
+    </p>
+    <p>
+      We can mention the initial state and final state with transitions and it
+      happens when some event occurs.
+    </p>
+    <p>
+      Transitions are gradual changes in the properties of an element when it
+      changes from one style to another.
+    </p>
+    <p>
+      Using CSS3 transition effects can be added to elements without the need
+      for any scripting or additional software like Flash.
+    </p>
+    <ul>
+      To add a transition, two things must be specified:
+      <li>The CSS property to which the effect should be added</li>
+      <li>The duration of the effect.transition: height 3s;</li>
+    </ul>
+    <h3>
+      Transition is a short-hand property to specify the properties mentioned
+      below
+    </h3>
+    <table>
+      <caption>
+        Transition Properties
+      </caption>
+      <thead>
+        <tr>
+          <th>transition</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>transition-property</td>
+          <td>
+            Includes CSS3 properties that need to be transited over a period of
+            time For example height, width, background, color, etc It accepts a
+            comma-separated list of properties to be transited. It accepts the
+            “all” keyword as a value that specifies that all the properties need
+            to be transited
+          </td>
+        </tr>
+        <tr>
+          <td>transition-duration</td>
+          <td>
+            Sets the duration (sec/msec) of transition. If this duration is not
+            mentioned then the transition will not have any effect
+          </td>
+        </tr>
+        <tr>
+          <td>transition-timing-function</td>
+          <td>
+            Controls the pace/speed of the transition. The key terms used are
+            linear, ease, ease-in, ease-out, ease-in-out, steps.
+          </td>
+        </tr>
+        <tr>
+          <td>transition-delay</td>
+          <td>Specifies the delay before starting the transition.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <h3>Transition Timing Function</h3>
+    <p>
+      The transition timing function is used to specify the pace/speed of
+      transition.
+    </p>
+    <ul>
+      This can be done in 2 ways
+      <li style="--nested: true">Specifying the pre-defined functions.</li>
+      <table>
+        <caption>
+          Pre Defined Properties
+        </caption>
+        <thead>
+          <tr>
+            <th>transition-timing-function</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ease</td>
+            <td>
+              Transition speed will be slow at the start and end and fast pace
+              in between.
+            </td>
+          </tr>
+          <tr>
+            <td>linear</td>
+            <td>Transition speed will be the same throughout.</td>
+          </tr>
+          <tr>
+            <td>ease-in</td>
+            <td>Transition speed will be slow at the start.</td>
+          </tr>
+          <tr>
+            <td>ease-out</td>
+            <td>Transition speed will be slow at the end.</td>
+          </tr>
+          <tr>
+            <td>ease-in-out</td>
+            <td>
+              Transition with slow speed at the start and end and linear speed
+              in betwees
+            </td>
+          </tr>
+          <tr>
+            <td>steps</td>
+            <td>Allows specifying intervals for the timing function.</td>
+          </tr>
+        </tbody>
+      </table>
+      <li>
+        Defining a custom function by specifying four co-ordinates to define a
+        cubic bezier curve
+      </li>
+    </ul>
+    <h3>The Cubic Bezier curve is defined by 4 points P0, P1, P2, and P3.</h3>
+    <p>
+      P0 and P3 are the start and end of the curve hence they have values 0 and
+      1 by default. We specify the x and y coordinate values for P1 and P2 to
+      the cubic bezier curve function.cubic-bezier(x1,y1,x2,y2)
+    </p>
+    <p>x1,y1,x2, and y2 are the x and y-coordinates of points P1 and P2.</p>
+    <p>transition-timing-function: ease, linear; cubic-bezier(0,1.1,0.8,4)</p>
+    <p>
+      Multiple transition functions can be specified for multiple properties by
+      separating them with a commaultiple transition functions can be specified
+      for multiple properties by separating them with a comma
+    </p>
+  </body>
+</html>
