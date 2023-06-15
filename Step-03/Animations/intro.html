@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Animations</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+        margin: 40px;
+      }
+      table {
+        box-shadow: 8px 8px 8px 5px rgba(0, 0, 0, 0.3);
+        margin-bottom: 10px;
+        border-color: brown;
+      }
+      th {
+        background-color: rgb(37, 107, 107);
+        color: #fff;
+      }
+      table > tbody > tr:nth-child(even) {
+        background-color: rgb(233, 248, 246);
+      }
+      table > tbody > tr:hover {
+        background-color: rgb(187, 222, 222);
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+        /* transition: background-color, 0.2s ease-in-out; */
+        /* background-color: #aaa; */
+      }
+      @keyframes anim {
+        to {
+          color: white;
+          background: black;
+        }
+        from {
+          color: black;
+          background: white;
+        }
+      }
+      /* @keyframes anim {
+        0% {
+          color: white;
+          background: black;
+        }
+        100% {
+          color: black;
+          background: white;
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <h1>Transition property can give a dynamic effect on web pages.</h1>
+    <ul>
+      But there are a few disadvantages with transitions.
+      <li>Transition starts only when some event like hover, focus occurs.</li>
+      <li>
+        We can specify only the initial state and final state for transitions,
+        but we cannot specify an intermediate state
+      </li>
+    </ul>
+    <p>To overcome these disadvantages we use animations of CSS3.</p>
+    <p>
+      CSS3 Animations can be used to replace animated images, scripts, and flash
+      animations on most of the web pages. Animations are the same as
+      transitions, but we can specify intermediate states also and animations
+      can start without events Observe the below loader created using CSS
+      Animations
+    </p>
+    <p>
+      Animation in CSS3 is done using keyframes. Within each keyframe, we define
+      the start and end of a smooth transition. We can specify when the change
+      will happen using from & to keywords.
+    </p>
+    <p>
+      Also, we can specify when the change will happen by specifying values in
+      percentages: 0% is the beginning, 100% is when the animation is complete.
+    </p>
+    <h2>
+      Animation is a short-hand property to specify the properties mentioned
+      below
+    </h2>
+    <table>
+      <caption>
+        Animation properties
+      </caption>
+      <thead>
+        <tr>
+          <th>Animation Property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>animation-name</td>
+          <td>
+            Every animation is given a name using which it is attached to an
+            element.
+          </td>
+        </tr>
+        <tr>
+          <td>animation-duration</td>
+          <td>The time span for an animation to complete one iteration</td>
+        </tr>
+        <tr>
+          <td>animation-timing</td>
+          <td>
+            Controls the pace/ speed of the animation. The key terms used are
+            linear, ease, ease-in, ease-out, ease-in-out.
+          </td>
+        </tr>
+        <tr>
+          <td>animation-delay</td>
+          <td>Specifies the delay before starting the animation.</td>
+        </tr>
+        <tr>
+          <td>animation-iteration-count</td>
+          <td>
+            Specifies the number of iterations the animation will play. The
+            Default value is 1.
+          </td>
+        </tr>
+        <tr>
+          <td>animation-direction</td>
+          <td>
+            The default value is normal which plays the animation in the forward
+            direction. Takes the value reverse which plays the animation in
+            backward direction Takes the value alternate which plays the
+            animation in the forward direction every odd time and backward
+            direction even time Takes value alternate-reverse which plays the
+            animation in reverse direction every odd time and forward direction
+            even time
+          </td>
+        </tr>
+        <tr>
+          <td>play-state</td>
+          <td>
+            Explains the state of animation. Can take values ‘paused’ or
+            ‘running’. Paused will pause the animation. Running will resume the
+            animation from where it was paused.
+          </td>
+        </tr>
+        <tr>
+          <td>fill-mode</td>
+          <td>
+            The property is used to describe what occurs before the animations
+            start & after the animation ends.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Fill Mode Property</h2>
+    <table>
+      <caption>
+        Details of Fill Mode property
+      </caption>
+      <thead>
+        <tr>
+          <th>fill-mode property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>none</td>
+          <td>
+            Default value. The properties remain in their original until the
+            animation starts and once the animation ends the properties return
+            to their original state.
+          </td>
+        </tr>
+        <tr>
+          <td>forwards</td>
+          <td>
+            Once the animation ends (determined by animation-iteration-count),
+            the properties retain the final keyframe values.
+          </td>
+        </tr>
+        <tr>
+          <td>backwards</td>
+          <td>
+            The animation will apply the property values defined in the keyframe
+            that will start the first iteration of the animation, during the
+            period defined by animation-delay. These are either the values of
+            the from keyframe (when animation-direction is "normal" or
+            "alternate") or those of the to keyframe (when animation-direction
+            is "reverse" or "alternate-reverse")
+          </td>
+        </tr>
+        <tr>
+          <td>both</td>
+          <td>
+            The animation will follow the rules of both forwards and backwards
+            properties. That is, it will extend the animation properties in both
+            directions
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

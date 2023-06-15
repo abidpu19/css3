@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animation Tryout</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: grey;
+        position: relative;
+        animation: mymove 3s ease-in 4;
+      }
+
+      @keyframes mymove /*Safari and Chrome*/ {
+        0% {
+          transform: rotate(360deg) scale(0);
+        }
+        100% {
+          transform: rotate(0deg) scale(1);
+        }
+      }
+
+      .texthead {
+        animation: myhead 1s ease-in infinite;
+        margin-top: 100px;
+      }
+      @keyframes myhead {
+        0% {
+          text-shadow: 0 0 white;
+        }
+        100% {
+          text-shadow: 0 0 rgba(255, 255, 255, 0), -45px -45px 0 red,
+            -30px -30px 0 orange, -15px -15px 0 yellow, 45px 45px 0 green,
+            30px 30px 0 blue, 15px 15px 0 maroon;
+        }
+      }
+
+      td {
+        width: 25rem;
+        padding: 50px;
+        border: 1px solid black;
+      }
+
+      .try3 {
+        font-family: sans-serif;
+        color: white;
+        background: maroon;
+        animation: myfirst 8s;
+        animation-delay: 3s;
+        animation-fill-mode: backwards;
+      }
+
+      .div1 {
+        animation: appear 4s;
+        animation-iteration-count: 4;
+      }
+
+      .div2 {
+        animation: disappear 4s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes myfirst {
+        0% {
+          color: Aqua;
+          background: Black;
+        }
+        100% {
+          color: yellow;
+          background: pink;
+        }
+      }
+
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes disappear {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <td>
+          <h1 class="texthead">Welcome</h1>
+        </td>
+        <td>
+          <br />
+          <div align="center">The animated effect on this div tag</div>
+        </td>
+        <td>
+          <br />
+          <h1 align="center" class="try3">The animated effect on this text</h1>
+          <br />
+          <br />
+          <div class="div1">This section will be soon visible</div>
+          <br />
+          <br />
+          <div class="div2">This is the second section will soon disapper</div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

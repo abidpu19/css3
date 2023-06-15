@@ -1,0 +1,41 @@
+ img {
+     width: 100px;
+     height: 100px;
+ }
+
+ @keyframes fordiv {
+     0% {
+         left: 0px;
+         top: 0px;
+     }
+
+     25% {
+         left: 200px;
+         top: 0px;
+     }
+
+     50% {
+         left: 200px;
+         top: 200px;
+     }
+
+     75% {
+         left: 0px;
+         top: 200px;
+     }
+
+     100% {
+         left: 0px;
+         top: 0px;
+     }
+ }
+
+ #imageanim {
+     position: relative;
+     animation-name: fordiv;
+     animation-duration: 6s;
+     animation-timing-function:linear;
+     animation-delay:1s;
+      animation-direction:alternate-reverse;
+       animation-iteration-count:infinite;
+ }
