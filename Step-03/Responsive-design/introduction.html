@@ -4,12 +4,168 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Design</title>
+    <style>
+      @media screen and (max-width: 520px) {
+        .body {
+          background: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <h2>What is Responsive Design</h2>
     <p>
       A Responsive page is a web page that renders well in all the devices like
       desktop, laptop, tablet, and mobiles, which have different screen sizes.
+    </p>
+    <p>
+      A responsive page will adapt to the screen size and will look good on
+      every device. These pages adjust to the screen resolution or simply the
+      screen size and orientation (in case of mobile and tablet) of the device
+      being used to view the web page.
+    </p>
+    <h4>
+      We can make a web page's layout change according to the screen size using
+      the below techniques
+    </h4>
+    <ul>
+      <li>Fluid Layouts</li>
+      <li>Flexible Images</li>
+      <li>Media Queries</li>
+    </ul>
+    <h3>Flexible Images</h3>
+    <p>
+      The image grows or shrinks according to the container dimensions. We need
+      to specify the width of the image using the percentage of its container
+      width.
+    </p>
+    <h5>Setting the width of foreground images</h5>
+    <p>
+      We will apply relative dimensions to the <img /> element Problem: Consider
+      we have an image that needs to be displayed at 150X150 size inside a 720
+      px wide element and we want it to scale it as the parent element scales.
+      Solution: For the above problem, we can have a container exclusively for
+      the image, set its relative size on the container, and let the image fill
+      container width. i.e., 150/720 = 20.8333% and to scale the image when the
+      parent scales but limit the extent to which it scales up/down we can set
+      max-width/min-width on the parent.
+    </p>
+    <h3>Setting the width of the background images</h3>
+    <p>
+      Problem: Consider we want the background image to scale when the element
+      for which background is set to scales. Solution: For the above problem, we
+      can set background-size: 100%
+    </p>
+    <h2>Fluid Layouts</h2>
+    <p>
+      Layout grows and shrinks according to the viewport dimensions. We need to
+      use relative units such as % instead of absolute units (px). In order to
+      fit the layout to viewport width, we will replace absolute units for
+      dimensions of elements(px) with relative units (%) The width of the
+      topmost element (&lt;html&gt;) is browser width (due to viewport tag) Thus
+      specifying the width of all elements using % will scale the layout to the
+      viewport width. Such a layout is called fluid layout We need to represent
+      all px widths as % of the corresponding parent width.
+    </p>
+    <h3>Media queries</h3>
+    <p>
+      Media queries apply CSS styling based on the device form factors. Hence
+      the layout can differ on a desktop, tablet, and mobile
+    </p>
+    <h2>Media Types</h2>
+    <p>The important media types are</p>
+    <table>
+      <caption>
+        Media Types
+      </caption>
+      <thead>
+        <tr>
+          <th>Media Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>all</td>
+          <td>Applies to all devices (default value)</td>
+        </tr>
+        <tr>
+          <td>handheld</td>
+          <td>Applies to handheld devices</td>
+        </tr>
+        <tr>
+          <td>print</td>
+          <td>Applies to printer</td>
+        </tr>
+        <tr>
+          <td>screen</td>
+          <td>Applies to screen</td>
+        </tr>
+        <tr>
+          <td>tv</td>
+          <td>Applies to tv</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Media Features</h2>
+    <table>
+      <caption>
+        important Media typs
+      </caption>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Values</th>
+          <th>min/max</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>device-height, device-width</td>
+          <td>number</td>
+          <td>yes</td>
+          <td>Height/Width of the output device (specified in px, em, etc.)</td>
+        </tr>
+        <tr>
+          <td>height, width</td>
+          <td>number/td></td>
+          <td>yes</td>
+          <td>Height/Width of the viewport</td>
+        </tr>
+        <tr>
+          <td>orientation</td>
+          <td>landscape | portrait</td>
+          <td>no</td>
+          <td>The orientation of the device</td>
+        </tr>
+        <tr>
+          <td>resolution</td>
+          <td>number</td>
+          <td>yes</td>
+          <td>Resolution(pixel density) of the device (in dpi, dpcm, etc.)</td>
+        </tr>
+        <tr>
+          <td>device</td>
+          <td>number</td>
+          <td>yes</td>
+          <td>
+            The number of device pixels per CSS pixel. Used to detect
+            high-resolution screens like iPad retina
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      It is observed that sometimes mobile devices display a full desktop site.
+      In such cases, the computed page width is much higher than the expected
+      and hence the appropriate media queries will not be applied. It also
+      results in pages being zoomed out on mobile devices.
+    </p>
+    <h4>To overcome the above problem we can use the viewport meta tag</h4>
+    <p>
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0,
+      maximum-scale=1.0, user-scale=0"&gt;
     </p>
   </body>
 </html>
