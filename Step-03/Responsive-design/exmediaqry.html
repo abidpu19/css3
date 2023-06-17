@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Media Queries</title>
+    <style>
+      body {
+        margin: 20px;
+      }
+      .one {
+        background-color: lightpink;
+        float: left;
+        padding: 20px;
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+      }
+      .two {
+        background-color: lightblue;
+        float: left;
+        padding: 20px;
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+      }
+      .three {
+        background-color: grey;
+        float: left;
+        padding: 20px;
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+      }
+      @media (max-width: 600px) {
+        .one,
+        .two,
+        .three {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Layout shifter</h1>
+    <div id="container">
+      <div class="one">
+        <h3>one</h3>
+        Les pecheurs de perles (The Pearl Fishers) is an opera by the French
+        composer Georges Bizet, with a libretto by Eug ne Cormon and Michel
+        Carr, first performed on 30 September 1863 at the Theatre Lyrique in
+        Paris. Set in ancient Ceylon, it tells how two men's vow of eternal
+        friendship is threatened by their love for a woman, who is herself
+        conflicted between secular love and her sacred oath as a priestess. The
+        duet "Au fond du temple saint", generally known as "The Pearl Fishers
+        Duet".
+        <p>
+          and eventually became a staple part of the repertory of opera houses
+          worldwide. The loss of Bizet's original score meant that, until the
+          1970s, productions were based on versions with significant departures
+          from the original; recently, efforts have been made to reconstruct the
+          score in accordance with Bizet's intentions. Modern critics have
+          detected premonitions of the composer's genius which culminated, 10
+          years later
+        </p>
+      </div>
+      <div class="two">
+        <h2>Two</h2>
+        <p>
+          and eventually became a staple part of the repertory of opera houses
+          worldwide. The loss of Bizet's original score meant that, until the
+          1970s, productions were based on versions with significant departures
+          from the original; recently, efforts have been made to reconstruct the
+          score in accordance with Bizet's intentions. Modern critics have
+          detected premonitions of the composer's genius which culminated, 10
+          years later
+        </p>
+        <p>
+          Proin quis dui eros. Morbi fringilla, ligula vitae interdum volutpat,
+          est eros ultricies sem, vitae pellentesque lacus lorem vitae risus. In
+          odio eros, placerat in fermentum sit amet, cesent volutpat molestie
+          eleifend. mcorper quis lectus. Phasellus faucibus metus ac nisl
+          volutpat a lobortis lorem molestie. Ut bibendum vulputate tortor, a
+          faucibus enim tempus ut. Fusce consectetur, ligula quis feugiat
+          luctus, sapien tortor hendrerit enim, et tincidunt sapien augue in
+          nibh. Curabitur ligula odio, ullamcorper ac fermentum eu, luctus vel
+          mauris. Donec vehicula egestas urna, et hendrerit augue ultricies ac.
+          Morbi urna elit, dignissim in sagittis congue, pretium eu eros. Sed
+          blandit varius risus, pellentesque consequat lectus cursus in. Aenean
+          pellentesque nibh ut odio euismod in sollicitudin neque laoreet.
+        </p>
+      </div>
+      <div class="three">
+        <h3>Three</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+          dictum odio eget mauris vestibulum feugiat. Praesent ante sapien,
+          luctus pulvinar ultricies quis, aliquet in mi. Nulla facilisi. Donec
+          malesuada fringilla iaculis. Praesent nec quam sit amet orci volutpat
+          volutpat in eget eros. Duis pellentesque bibendum erat. Integer
+          pretium nunc vel augue rutrum eget feugiat mi molestie. Cras
+          venenatis, turpis et rhoncus scelerisque, mi augue suscipit urna, quis
+          sagittis tortor nisl ut purus. Aliquam at enim est. Donec sit amet
+          suscipit quam. Aliquam sit amet commodo eros.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
