@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Cheat Sheet</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+        margin: 40px;
+      }
+      table {
+        align-items: center;
+        box-shadow: -5px 6px 8px -3px rgba(30, 50, 40, 0.5);
+        margin-bottom: 40px;
+        lighting-color: burlywood;
+      }
+      table > tbody > tr > td {
+        padding: 5px;
+      }
+      table > thead > tr > th {
+        background-color: darkcyan;
+        color: #fff;
+      }
+      table > tbody > tr:nth-child(even) {
+        background-color: rgb(201, 201, 71);
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      The below table lists all basic CSS font properties supported by HTML5
+      tags, their descriptions with an example for each property.
+    </h3>
+    <table>
+      <caption>
+        CSS Properties
+      </caption>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>font-size</td>
+          <td>Spcifies the font siz</td>
+          <td>div.a{font-size:15px;}</td>
+        </tr>
+        <tr>
+          <td>font-style</td>
+          <td>normal | italic | oblique | inherit</td>
+          <td>
+            p.one { font-style: normal; } p.two { font-style: italic; } p.three
+            { font-style: oblique; }
+          </td>
+        </tr>
+        <tr>
+          <td>text-align</td>
+          <td>left | right | center | justify | inherit</td>
+          <td>
+            div.a { text-align: center; } div.b { text-align: left; } div.c {
+            text-align: right; } div.c { text-align: justify; }
+          </td>
+        </tr>
+        <tr>
+          <td>font-variant</td>
+          <td>normal | small-caps | inherit</td>
+          <td>p.small { font-variant: small-caps; }</td>
+        </tr>
+        <tr>
+          <td>color</td>
+          <td>Sets the color of text</td>
+          <td>
+            <h1 style="color: red">Hello World</h1>
+          </td>
+        </tr>
+        <tr>
+          <td>font-family</td>
+          <td>Specifies the font family</td>
+          <td>p{ font-family: "Times New Roman", Times, serif; }</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>
+      The below table that lists all the CSS3 relational & attribute selectors
+      supported by HTML5 tags, their descriptions with an example for each
+      property
+    </h2>
+    <table>
+      <caption>
+        CSS3 relational & attribute selectors
+      </caption>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A>B</td>
+          <td>
+            Selects any element B that is a direct child of A(ignores the deeper
+            nested elements)
+          </td>
+          <td>section > p</td>
+        </tr>
+        <tr>
+          <td>A+B</td>
+          <td>
+            Selects the B element that is placed immediately after the A element
+            and shares the same parent. This selects only the immediate sibling.
+          </td>
+          <td>h1 + p</td>
+        </tr>
+        <tr>
+          <td>A ~ B</td>
+          <td>
+            Selects all the B elements that are placed after the A element and
+            share the same parent. This selects all the siblings.
+          </td>
+          <td>div ~ p</td>
+        </tr>
+        <tr>
+          <td>a [attribute]</td>
+          <td>Selects all A elements with the specified attribute.</td>
+          <td>a[target]{ background-color: green;}</td>
+        </tr>
+        <tr>
+          <td>a[attribute=value]</td>
+          <td>Selects all A elements with specified attribute and value.</td>
+          <td>a[target="_blank"]{ background-color: green;}</td>
+        </tr>
+        <tr>
+          <td>a[attribute^=value]</td>
+          <td>
+            Selects all A elements where the value of attribute starts with the
+            specified value.
+          </td>
+          <td>a[title^="A1"]{ background-color: green;}</td>
+        </tr>
+        <tr>
+          <td>a[attribute$=value]</td>
+          <td>
+            Selects all A elements where the value of attribute ends with the
+            specified value.
+          </td>
+          <td>[title$="tion"]{ background-color: green;}</td>
+        </tr>
+        <tr>
+          <td>a[attribute*=value]</td>
+          <td>
+            Selects all A elements where the value of the attribute contains the
+            specified value.
+          </td>
+          <td>[title*="A1001"]{ background-color: green;}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>
+      The below table that lists all the CSS3 color models supported by HTML5
+      tags, their descriptions with an example for each property.
+    </h3>
+    <table>
+      <caption>
+        CSS3 color models supported by HTML5 tags
+      </caption>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>rgb</td>
+          <td>red,green,blue</td>
+          <td>background-color:rgb(255,0,0)</td>
+        </tr>
+        <tr>
+          <td>rgba</td>
+          <td>red,green,blue,alpha(opacity)</td>
+          <td>background-color:rgba(255,0,0,0.5)</td>
+        </tr>
+        <tr>
+          <td>hsl</td>
+          <td>hue,saturation,lightness</td>
+          <td>background-color:hsl(240,100%,20%)</td>
+        </tr>
+        <tr>
+          <td>hsla</td>
+          <td>hue,saturation,lightness,alpha(opacity)</td>
+          <td>background-color:hsla(240,100%,20%,0.6)</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>
+      The below table that lists all CSS border, box, and text properties
+      supported by HTML5 tags, their descriptions with an example for each
+      property.
+    </h4>
+    <table>
+      <caption>
+        CSS border, box, and text properties supported by HTML5 tags
+      </caption>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>border-radius</td>
+          <td>
+            border-top-
+            left,border-top-right,border-bottom-left,border-bottom-right
+          </td>
+          <td>border-radius : 30px 15px 25px 50px;</td>
+        </tr>
+        <tr>
+          <td>box-shadow</td>
+          <td>
+            Horizontal offset vertical offset blur distance spread distance
+            rgba();
+          </td>
+          <td>box-shadow : 5px 10px 6px 2px rgba(30,34,56,0.5);</td>
+        </tr>
+        <tr>
+          <td>text-shadow</td>
+          <td>
+            Horizontal offset vertical offset blur distance shadow colour ;
+          </td>
+          <td>text-shadow: 2px 3px 2px rgba(255,0,0,1);</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>
+      The below table that lists all the CSS3 transformation properties
+      supported by HTML5 tags, their descriptions with an example for each
+      property.
+    </h3>
+    <table>
+      <caption>
+        CSS3 transformation properties supported by HTML5 tags
+      </caption>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Scale</td>
+          <td>Scales the element width(x-value) & height(y value)</td>
+          <td>scale(2,1)</td>
+        </tr>
+        <tr>
+          <td>Rotate</td>
+          <td>Rotates the element</td>
+          <td>rotate(20deg)</td>
+        </tr>
+        <tr>
+          <td>Skew</td>
+          <td>
+            Skews the element from x degrees from the x-axis & y- degrees from
+            the y-axis
+          </td>
+          <td>skew(20deg)</td>
+        </tr>
+        <tr>
+          <td>Translate</td>
+          <td>
+            Translate moves the element to right by x-value, and y-value down
+            from its current position.
+          </td>
+          <td>translate(20px, 30px)</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

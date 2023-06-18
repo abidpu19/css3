@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Security</title>
+    <style>
+      body {
+        margin: 20px;
+        line-height: 1.7rem;
+        font-size: 1.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Why CSS Security</h2>
+    <p>
+      Let us now understand why we need to take care of vulnerabilities in CSS.
+      There is a possibility of injecting malicious code through CSS. If
+      stylesheets in a web application are weak, then an attacker can add some
+      styles which can do modification on the appearance of the web page.
+      Therefore there is a need to find the attacks possible in CSS and their
+      preventive measures to defend against those attacks.
+    </p>
+    <p>
+      As a web developer, we need to take care of writing preventive measures
+      for all possible vulnerabilities in web pages. As we use CSS for styling
+      those web pages, we should be aware of all possible vulnerabilities in
+      this language. Let us now see what are the security risks possible in CSS
+    </p>
+    <h3>CSS Security</h3>
+    <p>
+      Cascading StyleSheet is used to style the web pages. Mostly CSS files will
+      be treated as the least priority in terms of security. But there are risks
+      involved with these files as well. Many web developers will use a global
+      stylesheet file to store all styles related to a web application. This
+      approach involves few risks associated with it. An attacker can view all
+      the styles using the view source option in the browser and can understand
+      the features of the application by seeing the CSS class names. For
+      example, if a developer has created class names as ".addUser",
+      ".addAdmin", etc., an attacker will get some information that styles are
+      being applied based on roles. This information can be favorable to the
+      attacker. Another risk possible is an attacker can even inject some
+      malicious styles into the page which can lead to some undesired operations
+      like changing the appearance of a web app, understanding the sensitive
+      information of the application which can lead to data theft, etc.,
+    </p>
+    <p>
+      Following is the CSS vulnerability we are going to discuss further:
+      <mark> <b>CSS Injection</b></mark> Let us now understand this
+      vulnerability and its mitigation with examples.
+    </p>
+  </body>
+</html>
